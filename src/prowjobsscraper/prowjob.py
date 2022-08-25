@@ -45,6 +45,7 @@ class ProwJobMetadataLabels(BaseModel):
     refsOrg: Optional[str] = Field(None, alias="prow.k8s.io/refs.org")
     refsPull: Optional[str] = Field(None, alias="prow.k8s.io/refs.pull")
     refsRepo: Optional[str] = Field(None, alias="prow.k8s.io/refs.repo")
+    rehearseContext: Optional[str] = Field(None, alias="ci.openshift.io/rehearse.context")
     variant: Optional[str] = Field(None, alias="ci-operator.openshift.io/variant")
 
 
@@ -75,6 +76,20 @@ class ProwJob(BaseModel):
 
     @property
     def context(self) -> str:
+        # If it is a rehearse job, the context is the job being rehearsed
+        if self.metadata.labels.rehearseContext:
+            job_name = self.metadata.labels.rehearseContext
+            if self.metadata.labels.variant:
+                job_name = job_name.removeprefix(f"{self.metadata.labels.variant}-")
+            logger.debug(
+                "job=%s rehearseContext=%s job_name=%s : %s",
+                self.spec.job,
+                self.metadata.labels.rehearseContext,
+                job_name,
+                self,
+            )
+            return job_name
+
         if not (
             self.metadata.labels.refsOrg
             and self.metadata.labels.refsRepo

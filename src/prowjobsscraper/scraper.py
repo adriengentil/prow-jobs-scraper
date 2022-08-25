@@ -42,6 +42,9 @@ class Scraper:
 
     @staticmethod
     def _is_assisted_job(j: prowjob.ProwJob) -> bool:
+        if not j.spec.job.startswith("rehearse"):
+            return False
+
         if j.status.state not in ("success", "failure"):
             return False
         elif not re.search("openshift.*assisted", j.spec.job):

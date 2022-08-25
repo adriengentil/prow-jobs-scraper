@@ -63,6 +63,11 @@ def test_valid_json_from_prow_should_be_successfully_parsed(httpserver: HTTPServ
             "periodic",
             None,
         ),
+        (
+            "rehearse-4121-pull-ci-openshift-assisted-service-master-edge-e2e-metal-assisted",
+            "presubmit",
+            "edge",
+        ),
     ],
 )
 def test_context_should_be_successfully_parsed_based_on_job_type(
