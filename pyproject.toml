@@ -25,7 +25,7 @@ prow-jobs-scraper = "prowjobsscraper.main:main"
 
 [project.optional-dependencies]
 test-runner = ["tox==3.25.0"]
-unit-tests = ["pytest==7.1.2", "pytest-cov==3.0.0", "pytest-httpserver==1.0.4"]
+unit-tests = ["pytest==7.1.2", "pytest-cov==4.0.0", "pytest-httpserver==1.0.4"]
 coverage = ["coverage[toml]==6.3.3"]
 lint = ["black==22.10.0", "isort==5.10.1", "mypy==0.950"]
 
