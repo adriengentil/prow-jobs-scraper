@@ -1,5 +1,8 @@
 [build-system]
-requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+requires = [
+    "setuptools>=45",
+    "setuptools_scm[toml]>=6.2"
+]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
@@ -24,10 +27,22 @@ dynamic = ["version"]
 prow-jobs-scraper = "prowjobsscraper.main:main"
 
 [project.optional-dependencies]
-test-runner = ["tox==3.26.0"]
-unit-tests = ["pytest==7.1.2", "pytest-cov==4.0.0", "pytest-httpserver==1.0.6"]
-coverage = ["coverage[toml]==6.3.3"]
-lint = ["black==22.10.0", "isort==5.10.1", "mypy==0.950"]
+test-runner = [
+    "tox==3.26.0"
+]
+unit-tests = [
+    "pytest==7.1.2",
+    "pytest-cov==4.0.0",
+    "pytest-httpserver==1.0.6"
+]
+coverage = [
+    "coverage[toml]==6.3.3"
+]
+lint = [
+    "black==22.10.0",
+    "isort==5.10.1",
+    "mypy==0.950"
+]
 
 [tool.tox]
 legacy_tox_ini = """
