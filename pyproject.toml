@@ -28,7 +28,7 @@ prow-jobs-scraper = "prowjobsscraper.main:main"
 
 [project.optional-dependencies]
 test-runner = [
-    "tox==3.27.0",
+    "tox==3.27.1",
 ]
 unit-tests = [
     "pytest==7.2.0",
