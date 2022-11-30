@@ -19,7 +19,7 @@ dependencies = [
     "google-cloud-storage==2.6.0",
     "junitparser==2.8.0",
     "pydantic==1.10.2",
-    "opensearch-py==2.0.0",
+    "opensearch-py==2.0.1",
     "slack_sdk==3.18.3",
 ]
 dynamic = ["version"]
