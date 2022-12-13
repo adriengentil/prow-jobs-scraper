@@ -30,7 +30,7 @@ jobs-auto-report = "jobsautoreport.main:main"
 
 [project.optional-dependencies]
 test-runner = [
-    "tox==4.0.8",
+    "tox==4.0.9",
 ]
 unit-tests = [
     "pytest==7.2.0",
