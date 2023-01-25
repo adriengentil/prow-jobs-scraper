@@ -33,7 +33,7 @@ jobs-auto-report = "jobsautoreport.main:main"
 
 [project.optional-dependencies]
 test-runner = [
-    "tox==4.3.5",
+    "tox==4.4.0",
 ]
 unit-tests = [
     "freezegun==1.2.2",
